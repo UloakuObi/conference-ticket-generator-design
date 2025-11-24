@@ -4,54 +4,67 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./index.css">
   <title>Frontend Mentor | Conference ticket generator</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+  <header class="flow">
+    <img class="logo" src="../assets/images/logo-full.svg" alt="Coding conf brand logo"/>
+    <h1 class="fs-1">Your Journey to Coding Conf 2025 Starts Here!</h1>
+    <p class="fs-4">Secure your spot at next year’s biggest coding conference.</p>
+  </header>
 
-  <!-- Form starts -->
+  <main id="app">
+  <form class="form flow">
 
-  Your Journey to Coding Conf 2025 Starts Here!
+    <!-- Avatar Upload -->
+    <div class="file-upload">
+      <label for="avatarInput">
+          Upload Avatar
+          <div class="upload-prompt" id="dropZone">
+              <img class="upload-icon" src="../assets/images/icon-upload.svg" alt="Upload icon"/>
+              <p class="fs-6">Drag and drop or click to upload</p>
+          </div>
+      </label>
+      <div class="upload-info">
+          <img class="upload-info-icon" src="../assets/images/icon-info.svg" alt="Upload info icon"/>
+          <p class="fs-7">Upload your photo (JPG or PNG, max size: 500KB).</p>
+      </div>
+      <input type="file" id="avatarInput" class="hidden"></input>
+    </div>
 
-  Secure your spot at next year's biggest coding conference.
+    <!-- Data Entries -->
+    <div class="flow">
+      <label for="name" class="input-field">
+        Full Name:
+        <input type="text" name="name" required></input>
+      </label>
 
-  Upload Avatar
-  Drag and drop or click to upload
-  Upload your photo (JPG or PNG, max size: 500KB).
+      <label for="email" class="input-field">
+        Email Address:
+        <input type="text" name="email" placeholder="example@email.com" required></input>
+      </label>
 
-  Full Name
+      <label for="username" class="input-field">
+        GitHub Username:
+        <input type="text" name="username" placeholder="@yourusername" required></input>
+      </label>
+    </div>
 
-  Email Address
-  example@email.com
+    <!-- Submit Button -->
+    <button class="fs-5">Generate My Ticket</button>
+  </form>
 
-  GitHub Username
-  @yourusername
-
-  Generate My Ticket
-
-  <!-- Form ends -->
-
-  <!-- Generated tickets starts -->
-
-  Congrats, <!-- Full Name -->! Your ticket is ready.
-
-  We've emailed your ticket to <!-- Email Address --> and will send updates in the run up to the event.
-
-  Coding Conf
-  Jan 31, 2025 / Austin, TX
-
-  <!-- Generated tickets ends -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </main>
+  <script type="module" src="./index.js"></script>
 </body>
 </html>
