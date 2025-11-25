@@ -30,38 +30,42 @@
     <div class="file-upload">
       <label for="avatarInput">
           Upload Avatar
-          <div class="upload-prompt" id="dropZone">
-              <img class="upload-icon" src="../assets/images/icon-upload.svg" alt="Upload icon"/>
-              <p class="fs-6">Drag and drop or click to upload</p>
+          <div class="drop-zone br" id="dropZone">
+            <img class="upload-box br" src="../assets/images/icon-upload.svg" alt="Upload icon"/>
+            <p class="fs-6" id="uploadPrompt">Drag and drop or click to upload</p>
+            <div class="hidden" id="uploadControlBtns">
+              <button class="avatar-btn br">Remove Image</button>
+              <button class="avatar-btn br">Change Image</button>
+            </div>
           </div>
       </label>
       <div class="upload-info">
           <img class="upload-info-icon" src="../assets/images/icon-info.svg" alt="Upload info icon"/>
           <p class="fs-7">Upload your photo (JPG or PNG, max size: 500KB).</p>
       </div>
-      <input type="file" id="avatarInput" class="hidden" required></input>
+      <input type="file" name="avatar" id="avatarInput" class="hidden"></input>
     </div>
 
     <!-- Data Entries -->
     <div class="flow">
       <label for="name" class="input-field">
         Full Name:
-        <input type="text" name="name" required></input>
+        <input type="text" id="name" name="name" required></input>
       </label>
 
       <label for="email" class="input-field">
         Email Address:
-        <input type="text" name="email" placeholder="example@email.com" required></input>
+        <input type="text" id="email" name="email" placeholder="example@email.com" required></input>
       </label>
 
       <label for="username" class="input-field">
         GitHub Username:
-        <input type="text" name="username" placeholder="@yourusername" required></input>
+        <input type="text" id="username" name="username" placeholder="@yourusername" required></input>
       </label>
     </div>
 
     <!-- Submit Button -->
-    <button class="fs-5">Generate My Ticket</button>
+    <button class="fs-5 br submit-btn">Generate My Ticket</button>
   </form>
 
   </main>

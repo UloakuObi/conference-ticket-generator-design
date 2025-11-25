@@ -1,82 +1,18 @@
-export default function AvatarInput(id) {
+export default function AvatarInput() {
 
-    let isUploaded;
+    const dropZone = document.getElementById("dropZone")
+    const avatarInput = document.getElementById("avatarInput")
+    const uploadDisplayBox = document.querySelector(".upload-box")
+    const uploadPrompt = document.getElementById("uploadPrompt")
+    const uploadControlBtns = document.getElementById("uploadControlBtns")
 
-    // This is the wrapper div
-    const wrapper = document.createElement("div")
-    wrapper.classList.add("file-upload")
-
-    // Label for input
-    const label = document.createElement("label")
-    label.htmlFor = id 
-    label.textContent = "Upload Avatar"
-
-    // Inner Div for drop zone
-    const dropZone = document.createElement("div")
-    dropZone.classList.add("upload-prompt")
-
-    // Conditionally render elements inside the dropZone div
-    if (!isUploaded) {
-        // Upload Icon
-        const uploadIcon = document.createElement("img")
-        uploadIcon.src = "../assets/images/icon-upload.svg"
-        uploadIcon.alt = "Upload icon"
-        uploadIcon.classList.add("upload-icon")
-
-        // Upload prompt
-        const uploadText = document.createElement("p")
-        uploadText.textContent = "Drag and drop or click to upload"
-
-        // Append to dropZone
-        dropZone.append(uploadIcon, uploadText)
-    } else {
-        // Uploaded file goes here
-
-        // Button to remove file goes here
-
-        // Button to change file goes here
-        
-        console.log("This is a placeholder!")
-    }
-    
-
-    // Layering the elements
-    label.appendChild(dropZone)
-
-    // Another Div for the upload instruction
-    const infoDiv = document.createElement("div")
-    infoDiv.classList.add("upload-info")
-
-    // Img Element for infoIcon
-    const iconInfo = document.createElement("img")
-    iconInfo.src = "../assets/images/icon-info.svg"
-    iconInfo.alt = "Upload info icon"
-    iconInfo.classList.add("upload-info-icon")
-
-    // p tag for upload instruction
-    const uploadHint = document.createElement("p")
-    uploadHint.textContent = "Upload your photo (JPG or PNG, max size: 500KB)."
-
-    // Composing the info div
-    infoDiv.append(iconInfo, uploadHint)
-
-    // The input for file upload, this element is hidden
-    const input = document.createElement("input")
-    input.type = "file"
-    input.id = id
-    input.accept= "image/jpeg,image/png"
-
-    // Composing all elements; a parent div with 3 children
-    wrapper.append(label, infoDiv, input)
-
-
-    console.log("dropZone:", dropZone)
 
     // Logic for Handling File Upload
     // 1: Prevent default drag event behaviours
     // 2: Add visual cues
     // 3: Handle file drop
     // 4: Handle normal file upload
+
     dropZone.addEventListener("dragenter", e => {
         e.preventDefault()
         dropZone.classList.add("highlight")
@@ -107,12 +43,14 @@ export default function AvatarInput(id) {
         console.log("Drop File")
     })
 
-    input.addEventListener("change", e => {
+    avatarInput.addEventListener("change", e => {
         handleFileSelection(e.target.files)
         console.log("Normal File Upload")
     })
 
     function handleFileSelection(files) {
+        if (!files || files.length == 0) return 
+
         const file = files[0]
         console.log("Selected files", file)
         console.log("File name:", file.name)
@@ -121,11 +59,15 @@ export default function AvatarInput(id) {
 
         const reader = new FileReader()
         reader.onload = (e) => {
-            uploadIcon.src = e.target.result
+            uploadDisplayBox.src = e.target.result
+            uploadDisplayBox.style.padding = 0 
+            uploadPrompt.classList.add("hidden")
+            uploadControlBtns.classList.remove("hidden")
         }
+
+        reader.readAsDataURL(file)
     }
 
-    return wrapper
 }
 
 /*
@@ -147,42 +89,24 @@ export default function AvatarInput(id) {
 */
 
 
-// // 1: Prevent default drag event behaviours
-// ["dragenter", "dragover", "dragleave", "drop"].forEach(eventName => {
-//     dropZone.addEventListener(eventName, e => {
-//         e.preventDefault()
-//         e.stopPropagation()
-//     })
-// })
+// // Conditionally render elements inside the dropZone div
+   
+// // Upload Icon
+// const uploadIcon = document.createElement("img")
+// uploadIcon.src = "../assets/images/icon-upload.svg"
+// uploadIcon.alt = "Upload icon"
+// uploadIcon.classList.add("upload-icon")
 
-// // 2: Add visual cues
-// ["dragenter", "dragover"].forEach(eventName => {
-//     dropZone.addEventListener(eventName, () => {
-//         dropZone.classList.add("highlight")
-//     })
-// })
+// // Upload prompt
+// const uploadText = document.createElement("p")
+// uploadText.textContent = "Drag and drop or click to upload"
 
-// ["dragleave", "drop"].forEach(eventName => {
-//     dropZone.addEventListener(eventName, () => {
-//         dropZone.classList.remove("highlight")
-//     })
-// })
 
-// // 3: Handle file drop
-// dropZone.addEventListener("drop", e => {
-//     const files = e.dataTransfer.files
-//     if (!files || files.length === 0)
-//     input.files = files
-//     handleFileSelection(files)
-// })
 
-// // 4: Handle normal file upload
-// input.addEventListener("change", e => {
-//     handleFileSelection(e.target.files)
-// })
+// // Uploaded file goes here
 
-// // File Selection Function
-// function handleFileSelection(files) {
-//     console.log("Selected files", files)
-// }
+// // Button to remove file goes here
 
+// // Button to change file goes here
+
+// console.log("This is a placeholder!")

@@ -1,5 +1,11 @@
-import App from "./App.js"
+import AvatarInput from "./components/AvatarInput.js"
+import initTextInput from "./components/TextInput.js"
+import initSubmitForm from "./components/submitForm.js"
 
-const appRoot = document.getElementById("app")
-// appRoot.appendChild(App())
+document.addEventListener("DOMContentLoaded", () => {
+    AvatarInput()
+    initTextInput()
+    initSubmitForm()
+})
+
 
