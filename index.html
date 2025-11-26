@@ -24,50 +24,73 @@
   </header>
 
   <main id="app">
-  <form class="form flow">
+    <form class="form flow">
 
-    <!-- Avatar Upload -->
-    <div class="file-upload">
-      <label for="avatarInput">
-          Upload Avatar
-          <div class="drop-zone br" id="dropZone">
-            <img class="upload-box br" src="../assets/images/icon-upload.svg" alt="Upload icon"/>
-            <p class="fs-6" id="uploadPrompt">Drag and drop or click to upload</p>
-            <div class="hidden" id="uploadControlBtns">
-              <button class="avatar-btn br">Remove Image</button>
-              <button class="avatar-btn br">Change Image</button>
+      <!-- Avatar Upload -->
+      <div class="file-upload">
+        <label for="avatarInput">
+            Upload Avatar
+            <div class="drop-zone br" id="dropZone">
+              <img class="upload-box br" src="../assets/images/icon-upload.svg" alt="Upload icon"/>
+              <p class="fs-6" id="uploadPrompt">Drag and drop or click to upload</p>
+              <div class="hidden" id="uploadControlBtns">
+                <button class="avatar-btn br">Remove Image</button>
+                <button class="avatar-btn br">Change Image</button>
+              </div>
             </div>
-          </div>
-      </label>
-      <div class="upload-info">
-          <img class="upload-info-icon" src="../assets/images/icon-info.svg" alt="Upload info icon"/>
-          <p class="fs-7">Upload your photo (JPG or PNG, max size: 500KB).</p>
+        </label>
+        <div class="upload-info">
+            <img class="upload-info-icon" src="../assets/images/icon-info.svg" alt="Upload info icon"/>
+            <p class="fs-7" id="uploadInfo">Upload your photo (JPG or PNG, max size: 500KB).</p>
+        </div>
+        <input type="file" name="avatar" id="avatarInput" class="hidden"></input>
       </div>
-      <input type="file" name="avatar" id="avatarInput" class="hidden"></input>
-    </div>
 
-    <!-- Data Entries -->
-    <div class="flow">
-      <label for="name" class="input-field">
-        Full Name:
-        <input type="text" id="name" name="name" required></input>
-      </label>
+      <!-- Data Entries -->
+      <div class="flow">
+        <label for="name" class="input-field">
+          Full Name:
+          <input type="text" id="name" name="name" required></input>
 
-      <label for="email" class="input-field">
-        Email Address:
-        <input type="text" id="email" name="email" placeholder="example@email.com" required></input>
-      </label>
+          <!-- Hidden Error Message -->
+          <div class="upload-info red-highlight space-top hidden" id="nameInputErrorMsg">
+            <img class="upload-info-icon error-icon" src="../assets/images/icon-info.svg" alt="Upload info icon"/>
+            <p class="fs-7">Please enter a real name.</p>
+          </div>
 
-      <label for="username" class="input-field">
-        GitHub Username:
-        <input type="text" id="username" name="username" placeholder="@yourusername" required></input>
-      </label>
-    </div>
+        </label>
 
-    <!-- Submit Button -->
-    <button class="fs-5 br submit-btn">Generate My Ticket</button>
-  </form>
+        <label for="email" class="input-field">
+          Email Address:
+          <input type="text" id="email" name="email" placeholder="example@email.com" required></input>
 
+          <!-- Hidden Error Message -->
+          <div class="upload-info red-highlight space-top hidden" id="emailInputErrorMsg">
+            <img class="upload-info-icon error-icon" src="../assets/images/icon-info.svg" alt="Upload info icon"/>
+            <p class="fs-7">Please enter a valid email address.</p>
+          </div>
+
+        </label>
+
+        <label for="username" class="input-field">
+          GitHub Username:
+          <input type="text" id="username" name="username" placeholder="@yourusername" required></input>
+
+          <!-- Hidden Error Message -->
+          <div class="upload-info red-highlight space-top hidden" id="usernameInputErrorMsg">
+            <img class="upload-info-icon error-icon" src="../assets/images/icon-info.svg" alt="Upload info icon"/>
+            <p class="fs-7">Please enter a valid GitHub username.</p>
+          </div>
+
+        </label>
+
+      </div>
+
+      <!-- Submit Button -->
+      <button class="fs-5 br submit-btn">Generate My Ticket</button>
+    </form>
+
+    <a href="success.html">Success Page</a>
   </main>
   <script type="module" src="./index.js"></script>
 </body>

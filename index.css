@@ -70,9 +70,16 @@ html, body {
     margin-top: var(--flow-space, 1rem);
 }
 
-.hidden {display: none;}
+.hidden {display: none !important;}
 
 .br {border-radius: 0.625rem;}
+
+.red-highlight {color: hsl(var(--clr-orange-700));}
+.space-top { padding-top: .5rem; }
+
+.error-icon {
+    fill: hsl(var(--clr-orange-700));
+}
 
 body {
     background-color: hsl(var(--clr-neutral-900));

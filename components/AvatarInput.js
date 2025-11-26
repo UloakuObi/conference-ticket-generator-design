@@ -5,6 +5,7 @@ export default function AvatarInput() {
     const uploadDisplayBox = document.querySelector(".upload-box")
     const uploadPrompt = document.getElementById("uploadPrompt")
     const uploadControlBtns = document.getElementById("uploadControlBtns")
+    // const uploadInfo = document.getElementById("uploadInfo")
 
 
     // Logic for Handling File Upload
@@ -52,6 +53,8 @@ export default function AvatarInput() {
         if (!files || files.length == 0) return 
 
         const file = files[0]
+        if (!validateAvatar(file)) return
+
         console.log("Selected files", file)
         console.log("File name:", file.name)
         console.log("File size:", file.size)
@@ -69,6 +72,32 @@ export default function AvatarInput() {
     }
 
 }
+
+function validateAvatar(file) {
+    const allowedTypes = ["image/jpeg", "image/png"];
+    const allowedExtensions = ["jpg", "jpeg", "png"];
+    const MAX_SIZE = 500 * 1024;
+  
+    const extension = file.name.split('.').pop().toLowerCase();
+  
+    if (!allowedTypes.includes(file.type)) {
+      alert("Only JPG and PNG files are allowed.");
+      return false;
+    }
+  
+    if (!allowedExtensions.includes(extension)) {
+      alert("Invalid file extension.");
+      return false;
+    }
+  
+    if (file.size > MAX_SIZE) {
+      alert("Image must be less than 500KB.");
+      return false;
+    }
+  
+    return true;
+  }
+  
 
 /*
 <div class="file-upload">
