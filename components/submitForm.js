@@ -24,14 +24,21 @@ export default function initSubmitForm() {
             const formData = new FormData(form) 
 
             // Extract each form entry and save in an object
-            const userInfo = {
-                name: formData.get("name"),
-                email: formData.get("email"),
-                username: formData.get("username"),
-                avatar: formData.get("avatar") 
-            }
+            const file = avatarInput.files[0]
+            const reader = new FileReader()
 
-            sessionStorage.setItem("userInfo", JSON.stringify(userInfo)) // Save user info to session storage
+            reader.onload = () => {
+                const userInfo = {
+                    name: formData.get("name"),
+                    email: formData.get("email"),
+                    username: formData.get("username"),
+                    avatar: reader.result // stores files as base64 string
+                }
+
+                sessionStorage.setItem("userInfo", JSON.stringify(userInfo)) // Save user info to session storage
+            }
+            
+            reader.readAsDataURL(file)
             
             window.location.replace("success.html") // Navigate to the success page after collecting and storing form data
             

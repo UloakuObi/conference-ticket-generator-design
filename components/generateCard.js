@@ -3,4 +3,5 @@ export default function initGenerateCard() {
 
 
     console.log(userInfo)
+
 }
