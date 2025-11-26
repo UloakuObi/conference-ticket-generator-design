@@ -1,9 +1,11 @@
-import AvatarInput from "./components/AvatarInput.js"
-import initTextInput from "./components/TextInput.js"
+import initAvatarInput from "./components/avatarInput.js"
+import initTextInput from "./components/textInput.js"
 import initSubmitForm from "./components/submitForm.js"
+import initGenerateCard from "./components/generateCard.js"
 
 document.addEventListener("DOMContentLoaded", () => {
-    AvatarInput()
+    initAvatarInput()
     initTextInput()
     initSubmitForm()
+    initGenerateCard()
 })
