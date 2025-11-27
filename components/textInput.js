@@ -35,8 +35,11 @@ export default function initTextInput() {
 
             if (!nameRegex.test(value)) {
                 nameInputErrorMsg.classList.remove("hidden")
+                nameInputErrorMsg.setAttribute("role", "alert")
+                nameInput.focus()
             } else {
                 nameInputErrorMsg.classList.add("hidden")
+                nameInputErrorMsg.removeAttribute("role")
             }
         })
 
@@ -45,8 +48,11 @@ export default function initTextInput() {
 
             if (!emailRegex.test(value)) {
                 emailInputErrorMsg.classList.remove("hidden")
+                emailInputErrorMsg.setAttribute("role", "alert")
+                emailInput.focus()
             } else {
                 emailInputErrorMsg.classList.add("hidden")
+                emailInputErrorMsg.removeAttribute("role")
             }
         })
 
@@ -55,8 +61,11 @@ export default function initTextInput() {
 
             if (!usernameRegex.test(value)) {
                 usernameInputErrorMsg.classList.remove("hidden")
+                usernameInputErrorMsg.setAttribute("role", "alert")
+                usernameInput.focus()
             } else {
                 usernameInputErrorMsg.classList.add("hidden")
+                usernameInputErrorMsg.removeAttribute("role")
             }
         })
     }

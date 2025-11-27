@@ -18,6 +18,15 @@ export default function initAvatarInput() {
     // Check if the page has a dropZone element before running the code block below
     // This avoids errors on the success page
     if (dropZone) {
+        dropZone.addEventListener("keydown", (e) => {
+
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault()
+                avatarInput.click() // This activates file picker on clicking space or enter (for keyboard users)
+            }
+            
+        })
+
         dropZone.addEventListener("dragenter", e => {
             e.preventDefault()
             dropZone.classList.add("highlight")
