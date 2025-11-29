@@ -196,7 +196,7 @@ button {
     justify-content: center;
     align-items: center;
     text-align: center;
-    border: 1px dashed hsl(var(--clr-neutral-500));
+    border: 2px dashed hsl(var(--clr-neutral-500));
     height: 128px;
     margin-block: .75rem;
     cursor: pointer;
