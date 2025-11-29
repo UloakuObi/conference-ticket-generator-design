@@ -200,7 +200,7 @@ button {
     height: 128px;
     margin-block: .75rem;
     cursor: pointer;
-    background-color: hsl(var(--clr-neutral-700) / 60%);
+    background-color: hsl(var(--clr-neutral-700) / 40%);
 }  
 
 .upload-box {
@@ -237,7 +237,7 @@ button {
 
 input {
     height: 54px;
-    background-color: hsl(var(--clr-neutral-700) / 60%);
+    background-color: hsl(var(--clr-neutral-700) / 40%);
     border: 1px solid hsl(var(--clr-neutral-500));
     font-family: inherit;
     border-radius: 0.625rem;
@@ -253,7 +253,7 @@ input::placeholder{
 }
 
 input:not(:placeholder-shown) {
-    background-color: hsl(var(--clr-neutral-700) / 60%);
+    background-color: hsl(var(--clr-neutral-700) / 40%);
     border: 1px solid hsl(var(--clr-neutral-500));
 }
 
