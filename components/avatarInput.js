@@ -2,9 +2,11 @@ export default function initAvatarInput() {
 
     const dropZone = document.getElementById("dropZone")
     const avatarInput = document.getElementById("avatarInput")
-    const uploadDisplayBox = document.querySelector(".upload-box")
+    const previewUpload = document.querySelector(".upload-box")
     const uploadPrompt = document.getElementById("uploadPrompt")
     const uploadControlBtns = document.getElementById("uploadControlBtns")
+    const changeBtn = document.getElementById("changeImageBtn")
+    const removeBtn = document.getElementById("removeImageBtn")
     // const uploadInfo = document.getElementById("uploadInfo")
 
 
@@ -62,6 +64,21 @@ export default function initAvatarInput() {
             // console.log("Normal File Upload")
         })
 
+        // Change Image button
+        changeBtn.addEventListener("click", () => {
+            avatarInput.click()
+        })
+
+        // Remove Image button
+        removeBtn.addEventListener("click", () => {
+            // restore default UI state here
+            avatarInput.value = ""
+            previewUpload.src = "../assets/images/icon-upload.svg"
+            previewUpload.classList.add("preview--padded");
+            uploadPrompt.classList.remove("hidden")
+            uploadControlBtns.classList.add("hidden")
+        })
+
         function handleFileSelection(files) {
             if (!files || files.length == 0) return 
 
@@ -75,8 +92,9 @@ export default function initAvatarInput() {
 
             const reader = new FileReader()
             reader.onload = (e) => {
-                uploadDisplayBox.src = e.target.result
-                uploadDisplayBox.style.padding = 0 
+                previewUpload.src = e.target.result
+                // previewUpload.style.padding = 0 
+                previewUpload.classList.remove("preview--padded");
                 uploadPrompt.classList.add("hidden")
                 uploadControlBtns.classList.remove("hidden")
             }

@@ -189,11 +189,49 @@ button {
     cursor: pointer;
 }
 
+.drop-zone {
+    display: flex;
+    flex-direction: column;
+    gap: .95rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px dashed hsl(var(--clr-neutral-500));
+    height: 128px;
+    margin-block: .75rem;
+    cursor: pointer;
+}  
+
+.upload-box {
+    width: 55px;
+    height: 55px;
+    border: 1px solid hsl(var(--clr-neutral-700));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(var(--clr-neutral-900) / 30%);
+}
+
+.preview--padded {
+    padding: 0.5rem;
+  }
+  
+
+.upload-info-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.upload-info {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
 .input-field {
     margin-block: .5rem;
     display: flex;
     flex-direction: column;
-    /* gap: .125rem; */
 }
 
 input {
@@ -206,6 +244,7 @@ input {
     margin-top: .75rem;
     color: hsl(var(--clr-neutral-0));
 }
+
 
 input::placeholder{
     color: hsl(var(--clr-neutral-300));
@@ -220,45 +259,12 @@ input.bg-color {
     background-color: hsl(var(--clr-neutral-700) / 50%);
 }
 
-/* .file-upload {
-    border: 1px dashed red;
-} */
-
-.drop-zone {
-    display: flex;
-    flex-direction: column;
-    gap: .95rem;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: 1px dashed hsl(var(--clr-neutral-500));
-    height: 128px;
-    margin-block: .75rem;
-    /* background-color: hsl(var(--clr-neutral-0)); */
-}  
-
-.upload-box {
-    width: 55px;
-    height: 55px;
-    border: 1px solid hsl(var(--clr-neutral-700));
-    padding: .5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: hsl(var(--clr-neutral-900));
+input:hover,
+input:focus,
+.drop-zone:hover,
+.drop-zone:focus {
+    background-color: hsl(var(--clr-neutral-700));
 }
-
-.upload-info-icon {
-    width: 16px;
-    height: 16px;
-}
-
-.upload-info {
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-}
-
 
 div.highlight {
     border-color: hsl(var(--clr-neutral-500));
@@ -345,10 +351,6 @@ h3.card-name {
     border-radius: 8px;
 }
 
-/* p.space-left {
-    padding-left: 3rem;
-} */
-
 .card-content {
     display: flex;
     gap: .5rem;
@@ -430,7 +432,7 @@ h3.card-name {
     }
 }
 
-@media (min-width: 1024px) and (max-width: 1080px) {
+@media (min-width: 1024px) {
     main.card-container {
         width: 600px;
     }
@@ -438,6 +440,7 @@ h3.card-name {
         background-size: cover;
         width: 100%;
         padding-block: 1.5rem;
+        margin-bottom: 3rem;
     }
   }
 
