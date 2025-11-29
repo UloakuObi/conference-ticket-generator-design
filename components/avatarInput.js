@@ -73,7 +73,7 @@ export default function initAvatarInput() {
         removeBtn.addEventListener("click", () => {
             // restore default UI state here
             avatarInput.value = ""
-            previewUpload.src = "../assets/images/icon-upload.svg"
+            previewUpload.src = "./assets/images/icon-upload.svg"
             previewUpload.classList.add("preview--padded");
             uploadPrompt.classList.remove("hidden")
             uploadControlBtns.classList.add("hidden")
