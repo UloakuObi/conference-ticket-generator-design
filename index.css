@@ -238,7 +238,7 @@ button {
 input {
     height: 54px;
     background-color: hsl(var(--clr-neutral-700) / 60%);
-    border: 1px solid hsl(var(--clr-neutral-700));
+    border: 1px solid hsl(var(--clr-neutral-500));
     font-family: inherit;
     border-radius: 0.625rem;
     padding-left: .85rem;
@@ -254,6 +254,7 @@ input::placeholder{
 
 input:not(:placeholder-shown) {
     background-color: hsl(var(--clr-neutral-700) / 60%);
+    border: 1px solid hsl(var(--clr-neutral-500));
 }
 
 input.bg-color {
