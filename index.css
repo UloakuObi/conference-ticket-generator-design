@@ -160,7 +160,7 @@ label {
 
 @media (min-width:1024px) {
     header {
-        width: 80%;
+        width: clamp(65%, 67vw, 80%);
     }
 
     main {
