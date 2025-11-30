@@ -483,7 +483,8 @@ h3.card-name {
     z-index: 5;
 }
 
-.bg-squiggly-bottom {
+.bg-squiggly-bottom,
+.bg-squiggly-bottom img {
     position: fixed;
     left: 0;
     bottom: 0;
