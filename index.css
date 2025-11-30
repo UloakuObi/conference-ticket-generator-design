@@ -41,6 +41,7 @@ h1, h2, h3, h4, p {
 
 html, body {
     height: 100%;
+    min-height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -127,7 +128,7 @@ header {
 }
 
 .logo {
-    margin-top: 1rem;
+    margin-top: 1.85rem;
     margin-bottom: 1.5rem;   
 }
 
@@ -468,6 +469,7 @@ h3.card-name {
 /* - BACKGROUNG IMAGES- */
 /* -------------------- */
 
+
 .bg-pattern-lines {
     position: fixed;
     inset: 0;
@@ -480,15 +482,23 @@ h3.card-name {
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 5;
+    z-index: 3;
 }
 
-.bg-squiggly-bottom,
+.squiggly-bottom-wrapper {
+    position: relative;
+    left: -50%;
+    bottom: 0;
+    height: 100%;
+    margin-top: auto;
+}
 .bg-squiggly-bottom img {
-    position: fixed;
+    position: absolute;
     left: 0;
     bottom: 0;
-    z-index: 4;
+    width: 600px;
+    height: 400px;
+    z-index: 3;
 }
 
 @media (max-width:769px) {
