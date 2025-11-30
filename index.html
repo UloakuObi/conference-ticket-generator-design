@@ -90,27 +90,23 @@
 
     <!-- <a href="success.html">Success Page</a> -->
   </main>
-
+  
   <!-- Background Images -->
-  <div class="bg-images">
-    <img class="bg-pattern-lines" src="./assets/images/pattern-lines.svg" alt="background line pattern"/>
+  <picture class="bg-image">
+    <source media="(max-width: 480px)" srcset="./assets/images/background-mobile.png">
+    <source media="(max-width: 768px)" srcset="./assets/images/background-tablet.png">
+    <img src="./assets/images/background-desktop.png" alt="">
+  </picture>
 
-    <picture class="bg-image">
-      <source media="(max-width: 480px)" srcset="./assets/images/background-mobile.png">
-      <source media="(max-width: 768px)" srcset="./assets/images/background-tablet.png">
-      <img src="./assets/images/background-desktop.png" alt="">
-    </picture>
-    
-    <img class="bg-pattern-circle" src="./assets/images/pattern-lines.svg" alt="decorative circular pattern on the background"/>
-    
-    <picture class="bg-squiggly-bottom">
-      <source media="(max-width: 768px)" srcset="assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg">
-      <img src="./assets/images/pattern-squiggly-line-bottom-desktop.svg" alt="">
-    </picture>
-    
-    <img class="bg-squiggly-top" src="./assets/images/pattern-squiggly-line-top.svg" alt="decorative squiggly pattern on the background"/>
-  </div>
+  <img class="bg-squiggly-top" src="./assets/images/pattern-squiggly-line-top.svg" alt="decorative squiggly pattern on the background"/>
 
+  <picture class="bg-squiggly-bottom">
+    <source media="(max-width: 768px)" srcset="assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg">
+    <img src="./assets/images/pattern-squiggly-line-bottom-desktop.svg" alt="">
+  </picture> 
+
+  <img class="bg-pattern-circle" src="./assets/images/pattern-circle.svg" alt="decorative circular pattern on the background"/>
+  
   <script type="module" src="./index.js"></script>
 </body>
 </html>
