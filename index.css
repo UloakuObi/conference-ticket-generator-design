@@ -215,11 +215,11 @@ button {
     justify-content: center;
     align-items: center;
     text-align: center;
-    border: 2px dashed hsl(var(--clr-neutral-500) / 50%);
+    border: 2px dashed hsl(var(--clr-neutral-500));
     height: 128px;
     margin-block: .75rem;
     cursor: pointer;
-    background-color: hsl(var(--clr-neutral-700) / 20%);
+    background-color: hsl(var(--clr-neutral-700) / 80%);
 }  
 
 .upload-box {
@@ -242,6 +242,14 @@ button {
     height: 16px;
 }
 
+/* .upload-info-icon {
+    stroke: hsl(var(--clr-orange-700));
+}
+
+.upload-info-icon path {
+    stroke: hsl(var(--clr-orange-700));
+} */
+
 .upload-info {
     display: flex;
     align-items: center;
@@ -256,8 +264,8 @@ button {
 
 input {
     height: 54px;
-    background-color: hsl(var(--clr-neutral-700) / 20%);
-    border: 1px solid hsl(var(--clr-neutral-700) / 90%);
+    background-color: hsl(var(--clr-neutral-700) / 80%);
+    border: 1px solid hsl(var(--clr-neutral-500));
     font-family: inherit;
     border-radius: 0.625rem;
     padding-left: .85rem;
@@ -272,12 +280,12 @@ input::placeholder{
 }
 
 input:not(:placeholder-shown) {
-    background-color: hsl(var(--clr-neutral-700) / 20%);
-    border: 1px solid hsl(var(--clr-neutral-700) / 90%);
+    background-color: hsl(var(--clr-neutral-700) / 80%);
+    border: 1px solid hsl(var(--clr-neutral-500));
 }
 
 input.bg-color {
-    background-color: hsl(var(--clr-neutral-700) / 50%);
+    background-color: hsl(var(--clr-neutral-700) / 80%);
 }
 
 input:hover,
